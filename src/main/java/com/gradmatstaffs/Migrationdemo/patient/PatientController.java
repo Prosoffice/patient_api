@@ -1,10 +1,11 @@
 package com.gradmatstaffs.Migrationdemo.patient;
 
 
+import com.gradmatstaffs.Migrationdemo.dto.NewPatientDTO;
 import com.gradmatstaffs.Migrationdemo.dto.PatientDTO;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping(path="/patient")
@@ -27,5 +28,11 @@ public class PatientController {
     public List<PatientDTO> getAllPatients()
     {
         return patientService.getAllPatients();
+    }
+
+    @PostMapping(path="create")
+    public void createPatient(@RequestBody NewPatientDTO newPatientDTO)
+    {
+        patientService.createPatient(newPatientDTO);
     }
 }

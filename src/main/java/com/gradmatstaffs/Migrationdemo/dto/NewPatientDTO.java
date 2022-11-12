@@ -13,7 +13,7 @@ public class NewPatientDTO
 
     public NewPatientDTO()
     {
-        this(-1, "??", "??", LocalDate.MIN, -1, -1);
+        this(9, "??", "??", LocalDate.now(), 1, 1);
     }
 
     public NewPatientDTO(int id, String name, String address, LocalDate dob, int conditionId, int consultantId)
